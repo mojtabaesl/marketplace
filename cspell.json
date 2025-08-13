@@ -1,0 +1,21 @@
+{
+  "version": "0.2",
+  "language": "en",
+  "useGitignore": true,
+  "cache": true,
+  "cacheStrategy": "content",
+  "showProgress": false,
+  "showSummary": true,
+  "ignorePaths": [
+    "public/**/*",
+    "node_modules",
+    "dist",
+    "coverage",
+    "tmp",
+    "**/build",
+    "**/.next",
+    "**/storybook-static",
+    "**/generated"
+  ],
+  "words": []
+}
