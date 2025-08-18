@@ -1,0 +1,9 @@
+{
+  "name": "miniapp",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/miniapp/src",
+  "projectType": "application",
+  "tags": ["scope:miniapp", "type:app"],
+  "// targets": "to see all targets run: nx show project miniapp --web",
+  "targets": {}
+}

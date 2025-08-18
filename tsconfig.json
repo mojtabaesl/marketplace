@@ -8,6 +8,12 @@
     },
     {
       "path": "./libs/telegram"
+    },
+    {
+      "path": "./apps/miniapp-e2e"
+    },
+    {
+      "path": "./apps/miniapp"
     }
   ]
 }
