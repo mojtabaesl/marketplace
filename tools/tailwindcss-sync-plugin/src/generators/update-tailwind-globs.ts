@@ -199,7 +199,8 @@ function hasTailwindImport(css: string): boolean {
 }
 
 function parseExistingSourceDirectives(css: string): Set<string> {
-  const re = /^\s*@source\s+"[^"]+";\s*$/gm;
+  // match either '…' or "…" after @source
+  const re = /^\s*@source\s+['"][^'"]+['"];\s*$/gm;
   return new Set((css.match(re) ?? []).map((s) => s.trim()));
 }
 
@@ -209,7 +210,8 @@ function needsUpdate(existing: Set<string>, next: string[]): boolean {
 }
 
 function removeExistingSourceDirectives(css: string): string {
-  const re = /^\s*@source\s+"[^"]+";\s*$/gm;
+  // match either '…' or "…" after @source
+  const re = /^\s*@source\s+['"][^'"]+['"];\s*$/gm;
   // Collapse extra blank lines after removal
   return css.replace(re, '').replace(/\n{3,}/g, '\n\n');
 }

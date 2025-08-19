@@ -1,4 +1,10 @@
 {
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@marketplace/ui/*": ["./src/*"]
+    }
+  },
   "files": [],
   "include": [],
   "references": [

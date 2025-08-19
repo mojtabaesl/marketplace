@@ -17,5 +17,5 @@
     "**/storybook-static",
     "**/generated"
   ],
-  "words": ["miniapp"]
+  "words": ["miniapp", "shadcn"]
 }
