@@ -1,0 +1,10 @@
+{
+  "$schema": "./node_modules/nx/schemas/nx-plugin-schema.json",
+  "generators": {
+    "update-tailwind-globs": {
+      "factory": "./dist/generators/update-tailwind-globs",
+      "schema": "./dist/generators/schema.json",
+      "description": "update-tailwind-globs generator"
+    }
+  }
+}

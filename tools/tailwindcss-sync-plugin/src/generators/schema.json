@@ -1,0 +1,19 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "$id": "UpdateTailwindGlobsGenerator",
+  "title": "Update Tailwind Globs",
+  "description": "Updates Tailwind v4 @source directives in styles.css to include all transitive Nx dependencies. Prefers --project if provided, otherwise auto-detects the invoking project.",
+  "type": "object",
+  "properties": {
+    "project": {
+      "type": "string",
+      "description": "(Optional) Run for a single project by name. If omitted, the generator auto-detects or processes all apps."
+    },
+    "stylesPath": {
+      "type": "string",
+      "description": "(Optional) Custom stylesheet path relative to the project root. Defaults to <sourceRoot>/styles.css or src/styles.css.",
+      "examples": ["src/styles.css", "src/styles/index.css"]
+    }
+  },
+  "additionalProperties": false
+}

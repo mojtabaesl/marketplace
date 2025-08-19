@@ -1,10 +1,10 @@
 import './app.css';
-import NxWelcome from './nx-welcome';
+import { Input } from '@marketplace/ui';
 
 export function App() {
   return (
     <div>
-      <NxWelcome title="miniapp" />
+      <Input />
     </div>
   );
 }

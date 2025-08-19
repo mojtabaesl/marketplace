@@ -11,8 +11,10 @@
     "@nx/devkit": "21.3.11",
     "@nx/eslint": "21.3.11",
     "@nx/eslint-plugin": "21.3.11",
+    "@nx/jest": "21.3.11",
     "@nx/js": "21.3.11",
     "@nx/playwright": "21.3.11",
+    "@nx/plugin": "21.3.11",
     "@nx/react": "21.3.11",
     "@nx/vite": "21.3.11",
     "@nx/web": "21.3.11",
@@ -37,6 +39,7 @@
     "husky": "9.1.7",
     "jiti": "2.4.2",
     "jsdom": "~22.1.0",
+    "jsonc-eslint-parser": "^2.1.0",
     "lint-staged": "16.1.5",
     "nx": "21.3.11",
     "prettier": "2.6.2",
@@ -48,7 +51,8 @@
   },
   "workspaces": [
     "apps/*",
-    "libs/*"
+    "libs/*",
+    "tools/*"
   ],
   "lint-staged": {
     "*.{ts,tsx,js,jsx,md}": "cspell"
