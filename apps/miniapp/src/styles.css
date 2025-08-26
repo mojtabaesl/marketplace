@@ -1,6 +1,7 @@
 @import 'tw-animate-css';
 @import 'tailwindcss';
 
+@source '../../../libs/telegram';
 @source '../../../libs/ui';
 
 @custom-variant dark (&:is(.dark *));
