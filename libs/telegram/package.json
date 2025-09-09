@@ -2,6 +2,7 @@
   "name": "@marketplace/telegram",
   "version": "0.0.1",
   "main": "./src/index.ts",
+  "type": "module",
   "types": "./src/index.ts",
   "exports": {
     "./react-sdk": {
@@ -18,5 +19,8 @@
   },
   "dependencies": {
     "@telegram-apps/sdk-react": "3.3.6"
+  },
+  "devDependencies": {
+    "happy-dom": "18.0.1"
   }
 }

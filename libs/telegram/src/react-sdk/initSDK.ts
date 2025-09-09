@@ -12,25 +12,26 @@ import {
   retrieveLaunchParams,
   emitEvent,
   miniApp,
+  RetrieveLPResult,
 } from '@telegram-apps/sdk-react';
 
 export interface InitialArgs {
   debug: boolean;
-  platform: string;
   mockForMacOS: boolean;
+  themeParams: RetrieveLPResult['tgWebAppThemeParams'];
 }
 
 function getInitialArgs(isDev: boolean): InitialArgs {
   const launchParams = retrieveLaunchParams();
-  const { tgWebAppPlatform } = launchParams;
+  const { tgWebAppPlatform, tgWebAppStartParam, tgWebAppThemeParams } =
+    launchParams;
   const debug =
-    isDev ||
-    (launchParams.tgWebAppStartParam || '').includes('platformer_debug');
+    isDev || (tgWebAppStartParam ?? '').includes('platformer_debug');
 
   return {
     debug,
-    platform: tgWebAppPlatform,
     mockForMacOS: tgWebAppPlatform === 'macos',
+    themeParams: tgWebAppThemeParams,
   };
 }
 
@@ -43,8 +44,6 @@ export async function initSDK(params: { isDev: boolean }): Promise<void> {
  * Initializes the application and configures its dependencies.
  */
 async function init(options: InitialArgs): Promise<void> {
-  // Set @telegram-apps/sdk-react debug mode and initialize it.
-
   setDebug(options.debug);
   appsInit();
 
@@ -69,7 +68,7 @@ async function init(options: InitialArgs): Promise<void> {
             tp = themeParamsState();
           } else {
             firstThemeSent = true;
-            tp ||= retrieveLaunchParams().tgWebAppThemeParams;
+            tp ||= options.themeParams;
           }
           return emitEvent('theme_changed', { theme_params: tp });
         }

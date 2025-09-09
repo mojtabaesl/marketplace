@@ -34,6 +34,9 @@
   "references": [
     {
       "path": "../../libs/ui/tsconfig.lib.json"
+    },
+    {
+      "path": "../../libs/telegram/tsconfig.lib.json"
     }
   ]
 }
