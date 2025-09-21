@@ -78,5 +78,12 @@ jobs:
       # Secret scanning with Gitleaks
       - name: Secret scan (gitleaks)
         uses: gitleaks/gitleaks-action@v2
+
+      # Run CodeQL for static analysis
+      - name: Initialize CodeQL
+        uses: github/codeql-action/init@v3
         with:
-          args: detect --source . --no-git -v
+          languages: javascript-typescript
+
+      - name: Perform CodeQL Analysis
+        uses: github/codeql-action/analyze@v3
