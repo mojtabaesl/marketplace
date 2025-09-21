@@ -65,6 +65,8 @@ jobs:
   # Run OSV-Scanner for dependency vulnerabilities
   scan-pr:
     if: ${{ github.event_name == 'pull_request' || github.event_name == 'merge_group' }}
+    permissions:
+      security-events: write
     uses: 'google/osv-scanner-action/.github/workflows/osv-scanner-reusable-pr.yml@v2.2.2'
     with:
       scan-args: |-
@@ -77,8 +79,6 @@ jobs:
     if: github.event.pull_request.draft == false
     runs-on: ubuntu-latest
     permissions:
-      actions: read
-      contents: read
       security-events: write # required for uploading SARIF reports
       id-token: write # required by Scorecards to fetch OIDC token
     steps:
