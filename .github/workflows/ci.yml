@@ -107,7 +107,7 @@ jobs:
       - name: OpenSSF Scorecards
         uses: ossf/scorecard-action@05b42c624433fc40578a4040d5cf5e36ddca8cde
         with:
-          results_file: results.sarif
+          results_file: scorecards.sarif
           results_format: sarif
           publish_results: false # Do not publish results during PRs
           repo_token: ${{ secrets.GITHUB_TOKEN }}
